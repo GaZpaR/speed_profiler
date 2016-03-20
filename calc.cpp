@@ -2,7 +2,7 @@
 #include "math.h"
 
 void bigfl_calc(void){
-    float *val = (float*)malloc(1024*1024*1024*sizeof(float));
+    float *val = (float*)aligned_alloc(16,1024*1024*1024*sizeof(float));
     
     for(uint32_t i=0; i < 1024*1024*1024; i++){
         val[i] = (i*i)/sqrt(i);
@@ -12,7 +12,7 @@ void bigfl_calc(void){
 }
 
 void midfl_calc(void){
-    float *val = (float*)malloc(1024*1024*256*sizeof(float));
+    float *val = (float*)aligned_alloc(16,1024*1024*256*sizeof(float));
     
     for(uint32_t i=0; i < 1024*1024*256; i++){
         val[i] = exp(i)/(i*i);
@@ -22,7 +22,7 @@ void midfl_calc(void){
 }
 
 void smalfl_calc(void){
-    float *val = (float*)malloc(1024*512*sizeof(float));
+    float *val = (float*)aligned_alloc(16,1024*512*sizeof(float));
     
     for(uint32_t i=0; i < 1024*512; i++){
         val[i] = i/760;
