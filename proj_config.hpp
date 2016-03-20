@@ -21,3 +21,5 @@
     #define MINIMAL_STACK_SIZE 10
     #define DEFAULT_STACK_SIZE 200
 #endif 
+
+#define FNAME_LENGTH 40
